@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="EricMorand\CategoryLandingPage\Ui\Component\Form\Field\Category\LandingPageLayout"
+                 type="Magento\Ui\Component\Form\Field\DefaultValue">
+        <arguments>
+            <argument name="path" xsi:type="string">web/default_layouts/default_category_landing_layout</argument>
+        </arguments>
+    </virtualType>
+    <preference for="Magento\Catalog\Model\Category\DataProvider"
+                type="EricMorand\CategoryLandingPage\Model\Category\DataProvider"/>
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <plugin name="category_landing_page_category_data_provider"
+                type="EricMorand\CategoryLandingPage\Model\Category\DataProvider\Plugin"/>
+    </type>
+    <type name="Magento\Store\Model\ResourceModel\Store">
+        <plugin name="update_category_landing_page_url_rewrites_after_store_save"
+                type="EricMorand\CategoryLandingPage\Plugin\Store\Model\ResourceModel\Store"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Category">
+        <plugin name="category_landing_page_url_rewrite_plugin"
+                type="EricMorand\CategoryLandingPage\Plugin\Catalog\Model\ResourceModel\Category"/>
+    </type>
+</config>

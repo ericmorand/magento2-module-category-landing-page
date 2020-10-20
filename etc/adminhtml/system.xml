@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="web">
+            <group id="default_layouts">
+                <field id="default_category_landing_layout" translate="label" type="select" sortOrder="25" showInDefault="1">
+                    <label>Default Category Landing Page Layout</label>
+                    <source_model>Magento\Catalog\Model\Config\Source\LayoutList</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="landing_search_engine_optimization" sortOrder="200">
+        <settings>
+            <collapsible>true</collapsible>
+            <label translate="true">Landing Page Search Engine Optimization</label>
+        </settings>
+        <container name="landing_url_key_group" component="Magento_Ui/js/form/components/group" sortOrder="120">
+            <argument name="data" xsi:type="array">
+                <item name="type" xsi:type="string">group</item>
+                <item name="config" xsi:type="array">
+                    <item name="required" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+            <field name="landing_url_key" sortOrder="10" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">category</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">URL Key</label>
+                </settings>
+            </field>
+        </container>
+        <field name="landing_meta_title" sortOrder="130" formElement="input">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Meta Title</label>
+            </settings>
+        </field>
+        <field name="landing_meta_keywords" sortOrder="140" formElement="textarea">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Meta Keywords</label>
+            </settings>
+        </field>
+        <field name="landing_meta_description" sortOrder="150" formElement="textarea">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Meta Description</label>
+            </settings>
+        </field>
+    </fieldset>
+    <fieldset name="design">
+        <field name="landing_custom_design" component="Magento_Catalog/js/components/use-parent-settings/select"
+               sortOrder="185" formElement="select">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Landing Page Theme</label>
+                <imports>
+                    <link name="serviceDisabled">${ $.parentName }.custom_use_parent_settings:checked ||
+                        $.data.serviceDisabled
+                    </link>
+                </imports>
+            </settings>
+        </field>
+        <field name="landing_page_layout" sortOrder="195" formElement="select"
+               component="Magento_Catalog/js/components/use-parent-settings/select"
+               class="Magento\Catalog\Ui\Component\Form\Field\Category\PageLayout">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Landing Page Layout</label>
+                <imports>
+                    <link name="serviceDisabled">${ $.parentName }.custom_use_parent_settings:checked ||
+                        $.data.serviceDisabled
+                    </link>
+                </imports>
+            </settings>
+        </field>
+    </fieldset>
+</form>

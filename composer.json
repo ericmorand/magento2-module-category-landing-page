@@ -1,0 +1,22 @@
+{
+    "name": "ericmorand/magento2-module-category-landing-page",
+    "type": "magento2-module",
+    "version": "dev-master",
+    "authors": [
+        {
+            "name": "Eric MORAND",
+            "email": "eric.morand@gmail.com"
+        }
+    ],
+    "require": {
+        "magento/framework": ">=102"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "EricMorand\\CategoryLandingPage\\": ""
+        }
+    }
+}
